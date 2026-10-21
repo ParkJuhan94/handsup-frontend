@@ -95,6 +95,7 @@ export const logoutUser = async () => {
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/logout`,
     {
       method: "POST",
+      credentials: "include", // 응답의 refresh 쿠키 만료(Set-Cookie)를 반영한다
       headers: {
         Authorization: `Bearer ${isTokenValid}`
       }

@@ -1,3 +1,28 @@
+> ## 📌 이 저장소에 대해
+>
+> 이 저장소는 프로그래머스 데브코스 팀 프로젝트의 프론트엔드 [Programmers-HandsUp/FE-HandsUp](https://github.com/Programmers-HandsUp/FE-HandsUp)을 **포크해 온 것**입니다.
+> 프론트엔드는 아래 팀원들이 만들었고, 커밋 히스토리는 원본 `develop` 브랜치 그대로 가져왔습니다(원본의 마지막 커밋: 2025-03-15).
+> 이후 개인 고도화한 [handsup-backend](https://github.com/ParkJuhan94/handsup-backend)와 연동해 실행해 보기 위한 수정만 이 저장소에서 더했습니다.
+>
+> ### 이 저장소에서 바꾼 것
+> - 토큰 재발급 응답에서 `result.token`을 읽던 것을 백엔드 응답 키인 `accessToken`으로 수정
+> - 로그인·로그아웃 요청에 `credentials: "include"` 추가 (이게 없으면 브라우저가 cross-origin 응답의 refresh 쿠키를 저장·삭제하지 않음)
+>
+> ### 백엔드와 연결해 로컬에서 실행하기
+> 1. 백엔드를 띄울 때 프론트 출처를 허용합니다: `CORS_ALLOWED_ORIGINS=http://localhost:3004` (예: 백엔드 `8082`)
+> 2. `.env.local`을 아래처럼 바꿉니다. 저장소에는 목 서버 모드(`enabled`)가 들어 있습니다.
+>    ```
+>    NEXT_PUBLIC_API_MOCKING=disabled
+>    NEXT_PUBLIC_BASE_URL=http://localhost:8082
+>    NEXT_PUBLIC_API_BASE_URL=http://localhost:8082
+>    ```
+> 3. `npm install --legacy-peer-deps --ignore-scripts` 후 `npx next dev -p 3004` (`package-lock.json`이 `package.json`과 맞지 않아 `npm ci`는 실패합니다)
+>
+> ### 알려진 문제
+> - 액세스 토큰이 만료된 상태에서 `/api/users`를 부르는 `getLoginUserInfo`에는 재발급 처리가 없어 `Unexpected end of JSON input` 오류가 납니다. 원본에서 이어진 문제입니다.
+>
+> ---
+
 ## ✍🏻 프로젝트 개요
 
 ### 중고거래 플랫폼의 성장

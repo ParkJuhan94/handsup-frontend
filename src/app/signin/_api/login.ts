@@ -6,6 +6,7 @@ export const signIn = async (authData: LoginRequest): Promise<boolean> => {
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/login`,
     {
       method: "POST",
+      credentials: "include", // refresh 쿠키(Set-Cookie)를 받으려면 cross-origin에서도 필요하다
       headers: {
         "Content-Type": "application/json"
       },
