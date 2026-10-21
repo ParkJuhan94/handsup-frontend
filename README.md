@@ -16,7 +16,7 @@
 >    NEXT_PUBLIC_BASE_URL=http://localhost:8082
 >    NEXT_PUBLIC_API_BASE_URL=http://localhost:8082
 >    ```
-> 3. `npm install --legacy-peer-deps --ignore-scripts` 후 `npx next dev -p 3004` (`package-lock.json`이 `package.json`과 맞지 않아 `npm ci`는 실패합니다)
+> 3. `npm install --legacy-peer-deps --ignore-scripts` 후 `npm run dev` (포트는 `package.json`의 `dev` 스크립트에 3004로 고정돼 있고, 백엔드 CORS 기본 허용 출처와 같습니다. `package-lock.json`이 `package.json`과 맞지 않아 `npm ci`는 실패합니다)
 >
 > ### 알려진 문제
 > - 액세스 토큰이 만료된 상태에서 `/api/users`를 부르는 `getLoginUserInfo`에는 재발급 처리가 없어 `Unexpected end of JSON input` 오류가 납니다. 원본에서 이어진 문제입니다.
