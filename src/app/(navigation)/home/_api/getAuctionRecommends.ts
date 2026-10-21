@@ -13,7 +13,7 @@ export async function getSortedBookMarks({
   const { si, gu, dong } = address;
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions/recommend?si=${si}&gu=${gu}&dong=${dong}&page=0&size=10&sort=북마크수`,
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions/recommend?si=${si}&gu=${gu}&dong=${dong}&page=0&size=10&sort=BOOKMARK`,
     {
       next: {
         tags: ["auction", "bookmark"]
@@ -31,7 +31,7 @@ export async function getSortedRecentlyCreated({
   const { si, gu, dong } = address;
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions/recommend?si=${si}&gu=${gu}&dong=${dong}&page=0&size=10&sort=최근생성`,
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions/recommend?si=${si}&gu=${gu}&dong=${dong}&page=0&size=10&sort=CREATED`,
     {
       next: {
         tags: ["auction", "recently"]
@@ -49,7 +49,7 @@ export async function getSortedDeadLine({
   const { si, gu, dong } = address;
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions/recommend?si=${si}&gu=${gu}&dong=${dong}&page=0&size=10&sort=마감일`,
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions/recommend?si=${si}&gu=${gu}&dong=${dong}&page=0&size=10&sort=END_DATE`,
     {
       next: {
         tags: ["auction", "deadline"]
@@ -69,7 +69,7 @@ export async function getSortedBids({
   const { si, gu, dong } = address;
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions/recommend?si=${si}&gu=${gu}&dong=${dong}&page=0&size=10&sort=입찰수`,
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions/recommend?si=${si}&gu=${gu}&dong=${dong}&page=0&size=10&sort=BIDDING`,
     {
       next: {
         tags: ["auction", "bids"]
@@ -88,7 +88,7 @@ export async function getSortedCategory(): Promise<RecommendAuctionsResponse | n
 
     if (!accessToken) return null;
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions/recommend/category?&page=0&size=10&sort=북마크수`,
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions/recommend/category?&page=0&size=10&sort=BOOKMARK`,
       {
         next: {
           tags: ["auction", "bids"]

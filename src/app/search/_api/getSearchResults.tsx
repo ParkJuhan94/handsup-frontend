@@ -1,10 +1,12 @@
 import { AuctionSearchResultResponse } from "@/utils/types/search/search";
 
+// 백엔드 정렬 기준(AuctionSortOption)의 enum 이름을 보낸다.
 const SORT_OPTION: { [key: string]: string } = {
-  최신순: "최신순",
-  "북마크 많은순": "북마크수",
-  "마감 임박순": "마감일",
-  "입찰수 많은순": "입찰수"
+  최신순: "CREATED",
+  "북마크 많은순": "BOOKMARK",
+  "마감 임박순": "END_DATE",
+  "마감일 임박순": "END_DATE", // 정렬 드롭다운(SearchHeader)의 표기
+  "입찰수 많은순": "BIDDING"
 };
 
 export const getSearchResults = async (
