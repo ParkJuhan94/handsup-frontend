@@ -58,3 +58,5 @@ next-env.d.ts
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
 **/public/fallback-*.js
+# 로컬 시드 데이터 이미지(backend/scripts/seed_local_data.py가 생성)
+public/seed/
