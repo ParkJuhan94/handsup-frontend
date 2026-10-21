@@ -9,7 +9,7 @@
 > - 로그인·로그아웃 요청에 `credentials: "include"` 추가 (이게 없으면 브라우저가 cross-origin 응답의 refresh 쿠키를 저장·삭제하지 않음)
 >
 > ### 백엔드와 연결해 로컬에서 실행하기
-> 1. 백엔드를 띄울 때 프론트 출처를 허용합니다: `CORS_ALLOWED_ORIGINS=http://localhost:3004` (예: 백엔드 `8082`)
+> 1. 백엔드를 띄웁니다. 로컬 프론트 출처(`localhost:3000`, `3004`)는 백엔드 `application.yml`의 `cors.allowed-origins`에 기본으로 들어 있어 따로 설정할 것이 없습니다. (8080을 다른 프로세스가 쓰면 `SERVER_PORT=8082`처럼 포트만 바꿉니다)
 > 2. `.env.local`을 아래처럼 바꿉니다. 저장소에는 목 서버 모드(`enabled`)가 들어 있습니다.
 >    ```
 >    NEXT_PUBLIC_API_MOCKING=disabled
